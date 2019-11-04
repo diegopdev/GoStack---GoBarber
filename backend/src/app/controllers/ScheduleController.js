@@ -17,7 +17,7 @@ class ScheduleController {
     const { date } = req.query;
     const parseDate = parseISO(date);
 
-    const appointment = Appointment.findAll({
+    const appointment = await Appointment.findAll({
       where: {
         provider_id: req.userId,
         canceled_at: null,
